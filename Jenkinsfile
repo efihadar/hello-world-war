@@ -22,7 +22,7 @@ node('master'){
             sh label: '', script: "mvn clean package"
         }
         stage('3. Analyzing'){
-            sh label: '', script: '''cd /opt/tomcat/.jenkins/workspace/M6-hello-world-war
+            sh label: '', script: '''cd /opt/tomcat/.jenkins/workspace/M6-hello-world-war/pom.xml
                                       mvn verify sonar:sonar'''
         }
         stage('4. Building Dockerfile'){
