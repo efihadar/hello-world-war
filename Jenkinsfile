@@ -16,7 +16,7 @@ node('master'){
     try {
         notifyBuild('STARTED')
         stage('1. Checking Out Code'){
-            checkout([$class: 'GitSCM', branches: [[name: '*/dev']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'Git-Creds', url: 'https://github.com/SaraBenShabbat/hello-world-war.git']]])
+            checkout([$class: 'GitSCM', branches: [[name: '*/dev']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'Git-Creds', url: 'https://github.com/efihadar/hello-world-war.git']]])
         }
         stage('2. Building'){
             sh label: '', script: "mvn clean package"
@@ -26,7 +26,7 @@ node('master'){
                                       mvn verify sonar:sonar'''
         }
         stage('4. Building Dockerfile'){
-            sh label: '', script: '''cp /opt/tomcat/.jenkins/workspace/No.6_module-FinalProject/target/hello-world-war-1.0.0.war /opt/tomcat/.jenkins/workspace/No.6_module-FinalProject
+            sh label: '', script: '''cp /opt/tomcat/.jenkins/workspace/M6-hello-world-war /opt/tomcat/.jenkins/workspace/M6-hello-world-war
                                      docker build .'''
         }
         stage('5. Tagging Docker Image'){
