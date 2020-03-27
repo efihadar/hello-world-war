@@ -16,7 +16,7 @@ node('master'){
     try {
         notifyBuild('STARTED')
         stage('1. Checking Out Code'){
-            checkout([$class: 'GitSCM', branches: [[name: '*/dev']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'Git-Creds', url: 'https://github.com/berezovsky15/hello-world-war.git']]])
+            checkout([$class: 'GitSCM', branches: [[name: '*/dev']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'Git-Creds', url: 'https://github.com/efihadar/hello-world-war.git']]])
         }
         stage('2. Building'){
             sh label: '', script: "mvn clean package"
