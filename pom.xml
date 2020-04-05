@@ -9,10 +9,6 @@
 	<description>Simplest possible Java Webapp</description>
   
 	<properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	</properties>
-	
-	<properties>
                <sonar.projectKey>efihadar_hello-world-war</sonar.projectKey>
                <sonar.organization>efihadar</sonar.organization>
 	       <sonar.host.url>https://sonarcloud.io</sonar.host.url>
